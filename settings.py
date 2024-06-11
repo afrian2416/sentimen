@@ -8,3 +8,8 @@ def settings():
     password = st.text_input("Password", type="password", value="Password")
     if st.button("Update Settings"):
         st.write("Settings updated!")
+    
+    st.subheader("Logout")
+    if st.button("Logout"):
+        st.session_state.logged_in = False
+        st.experimental_rerun()
