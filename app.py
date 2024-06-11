@@ -13,19 +13,9 @@ PAGES = {
 
 def main():
     st.sidebar.title("Navigation")
+    selection = st.sidebar.selectbox("Go to", list(PAGES.keys()))
     
-    # Membuat tombol untuk setiap halaman
-    if st.sidebar.button("Home"):
-        page = home
-    elif st.sidebar.button("Analysis"):
-        page = analysis
-    elif st.sidebar.button("History"):
-        page = history
-    elif st.sidebar.button("Settings"):
-        page = settings
-    else:
-        page = home  # Halaman default jika tidak ada tombol yang ditekan
-    
+    page = PAGES[selection]
     page()
 
 if __name__ == "__main__":
