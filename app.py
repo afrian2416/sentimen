@@ -15,7 +15,7 @@ PAGES = {
 def main():
     with st.sidebar:
         selected = option_menu("Main Menu", list(PAGES.keys()), 
-                               icons=['house', 'chart-line', 'history', 'gear'], 
+                               icons=['house', 'bar-chart-line', 'clock-history', 'gear'], 
                                menu_icon="cast", default_index=0)
         
     page = PAGES[selected]
