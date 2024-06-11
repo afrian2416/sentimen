@@ -14,7 +14,7 @@ PAGES = {
 
 def main():
     with st.sidebar:
-        selected = option_menu("Sentiment Analysis BPJS", list(PAGES.keys()), 
+        selected = option_menu("Sentiment Analysis", list(PAGES.keys()), 
                                icons=['house', 'bar-chart-line', 'clock-history', 'gear'], 
                                menu_icon="cast", default_index=0)
         
