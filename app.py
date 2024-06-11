@@ -20,9 +20,9 @@ def main():
         login()
     else:
         with st.sidebar:
-            selected = option_menu("Main Menu", list(PAGES.keys()), 
+            selected = option_menu(list(PAGES.keys()), 
                                    icons=['house', 'bar-chart-line', 'clock-history', 'gear'], 
-                                   menu_icon="cast", default_index=0, menu_title=None)
+                                   menu_title=None)
         
         page = PAGES[selected]
         page()
