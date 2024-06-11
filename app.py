@@ -3,6 +3,7 @@ from home import home
 from analysis import analysis
 from history import history
 from settings import settings
+from streamlit_option_menu import option_menu
 
 PAGES = {
     "Home": home,
@@ -12,10 +13,12 @@ PAGES = {
 }
 
 def main():
-    st.sidebar.title("Navigation")
-    selection = st.sidebar.selectbox("Go to", list(PAGES.keys()))
-    
-    page = PAGES[selection]
+    with st.sidebar:
+        selected = option_menu("Main Menu", list(PAGES.keys()), 
+                               icons=['house', 'chart-line', 'history', 'gear'], 
+                               menu_icon="cast", default_index=0)
+        
+    page = PAGES[selected]
     page()
 
 if __name__ == "__main__":
