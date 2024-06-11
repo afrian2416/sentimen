@@ -1,3 +1,4 @@
+import hashlib
 import streamlit as st
 from home import home
 from analysis import analysis
@@ -7,24 +8,28 @@ from streamlit_option_menu import option_menu
 import streamlit_authenticator as stauth
 import yaml
 
+# Helper function to hash passwords
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
 # Configuration for authentication
 config = {
     'credentials': {
         'usernames': {
-            'user': {
-                'name': 'weisse',
-                'password': stauth.Hasher(['password']).generate()[0]
+            'user1': {
+                'name': 'User One',
+                'password': hash_password('password')
             },
             'user2': {
                 'name': 'User Two',
-                'password': stauth.Hasher(['password']).generate()[0]
+                'password': hash_password('password')
             }
         }
     },
     'cookie': {
         'name': 'sentiment_app',
         'key': 'random_signature_key',
-        'expiry_days': 15
+        'expiry_days': 30
     }
 }
 
