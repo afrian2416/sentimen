@@ -15,8 +15,7 @@ PAGES = {
 def main():
     with st.sidebar:
         selected = option_menu("Sentiment Analysis", list(PAGES.keys()), 
-                               icons=['house', 'bar-chart-line', 'clock-history', 'gear'], 
-                                default_index=0)
+                               icons=['house', 'bar-chart-line', 'clock-history', 'gear'])
         
     page = PAGES[selected]
     page()
